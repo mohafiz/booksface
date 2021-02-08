@@ -16,4 +16,4 @@
 
 ## Update
 
-The web app has been deployed to Heroku! This is the <a href="https://booksface.herokuapp.com/">link</a>
+The web app has been deployed to Heroku! This is the <a href="https://booksface.herokuapp.com/">link</a>.
