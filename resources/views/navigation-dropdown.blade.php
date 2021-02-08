@@ -42,6 +42,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('addBooks') }}">Add Books</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin') }}">Admin Panel</a>
+                            </li>
                         @endcan
                     </ul>
                 <x-jet-dropdown align="right" width="48">
