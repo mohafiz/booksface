@@ -43,6 +43,10 @@
                 "theme",
                 "web"
             ],
+            "support": {
+                "issues": "https://github.com/ColorlibHQ/AdminLTE/issues",
+                "source": "https://github.com/ColorlibHQ/AdminLTE/tree/v3.1.0-rc"
+            },
             "time": "2020-11-25T10:51:19+00:00"
         },
         {

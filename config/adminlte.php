@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>B</b>ooks<b>F</>ace',
+    'logo_img' => 'img/logo-admin.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -187,13 +187,13 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => 'user/profile',
 
     /*
     |--------------------------------------------------------------------------
@@ -238,18 +238,16 @@ return [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'password/change',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
@@ -426,5 +424,5 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/9.-Other-Configuration
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

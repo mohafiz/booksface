@@ -32,7 +32,7 @@ Route::get('add', [BooksController::class, 'addBooks'])->name('addBooks')->middl
 Route::get('checkout', [BooksController::class, 'checkout'])->name('checkout')->middleware(['auth', 'referer']);
 Route::get('book/{slug}', [BooksController::class, 'bookDetails'])->name('bookDetails')->middleware('auth');
 
-Route::get('admin', [BooksController::class, 'admin'])->name('admin')->middleware('role:Super Admin');
+Route::get('admin', [BooksController::class, 'admin'])->name('admin')->middleware(['auth','role:Super Admin']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

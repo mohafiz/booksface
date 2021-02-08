@@ -16,8 +16,8 @@ class Addbooks extends Component
 	];
 
 	protected $messages = [
-		'MAL_URL.required'	=> 'You didn\'t enter a search term !',
-		'MAL_URL.string'	=> 'Your input seems to be not a valid text',
+		'searchTerm.required'	=> 'You didn\'t enter a search term !',
+		'searchTerm.string'	=> 'Your input seems to be not a valid text',
 	];
 
 	protected $validationAttributes = [
