@@ -13,3 +13,7 @@
     <li><a href="https://github.com/spatie/laravel-permission">laravel-permission</a></li>
     <li><a href="https://github.com/jeroennoten/Laravel-AdminLTE">laravel-AdminLTE</a></li>
 </ul>
+
+## Update
+
+The web app has been deployed to Heroku! This is the <a href="https://booksface.herokuapp.com/">link</a>
