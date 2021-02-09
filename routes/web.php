@@ -22,12 +22,6 @@ use App\Http\Controllers\BooksController;
 
 Route::get('/', [BooksController::class, 'index']);
 
-//add admin
-Route::get('/addadmin', function () {
-    $user = User::find(2);
-    $user->assignRole('admin');
-});
-
 //API route
 Route::get('/apiclients', function() {
     return view('api', ['clients' => Auth::user()->clients, 'tokens' => Auth::user()->tokens]);
