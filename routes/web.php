@@ -24,8 +24,7 @@ Route::get('/', [BooksController::class, 'index']);
 
 //add admin
 Route::get('/addadmin', function () {
-    Role::create(['name' => 'admin']);
-    $user = User::find(1);
+    $user = User::find(2);
     $user->assignRole('admin');
 });
 
