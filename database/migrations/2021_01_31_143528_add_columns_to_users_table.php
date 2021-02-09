@@ -17,7 +17,7 @@ class AddColumnsToUsersTable extends Migration
             $table->text('firstName');
             $table->text('lastName');
             $table->text('Address');
-            $table->text('secondAddress');
+            $table->text('secondAddress')->nullable();
             $table->text('State');
         });
     }
