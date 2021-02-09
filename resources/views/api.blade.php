@@ -118,7 +118,7 @@
                             <label for="redirect_url">Redirect URL <span style="color: red">*</span></label>
                             <input id="app_redirect" type="url" class="form-control" name="redirect" required>
                           </div>
-                          <button type="submit" onclick="create_client()" class="btn btn-primary">Create Client</button>
+                          <button type="submit" onclick="create_client()" class="btn btn-primary" style="width: 100%">Create Client</button>
                         </form>
                       </div>
                     </div>

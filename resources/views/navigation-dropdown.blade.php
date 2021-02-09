@@ -38,9 +38,17 @@
                             <a class="nav-link" href="{{ route('list') }}">Books list</a>
                         </li>
                         <livewire:cart-count :cartCount="auth()->user()->books()->count()" />
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('api') }}">API</a>
+                        </li>
+                        @endauth
                         @can('add-books')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('addBooks') }}">Add Books</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin') }}">Admin Panel</a>
                             </li>
                         @endcan
                     </ul>
