@@ -36,11 +36,11 @@ Route::get('/apiclients', function() {
 
 Route::get('list', [BooksController::class, 'booksList'])->name('list')->middleware('auth');
 Route::get('cart', [BooksController::class, 'myCart'])->name('myCart')->middleware('auth');
-Route::get('add', [BooksController::class, 'addBooks'])->name('addBooks')->middleware('role:Super Admin');
+Route::get('add', [BooksController::class, 'addBooks'])->name('addBooks')->middleware('role:admin');
 Route::get('checkout', [BooksController::class, 'checkout'])->name('checkout')->middleware(['auth', 'referer']);
 Route::get('book/{slug}', [BooksController::class, 'bookDetails'])->name('bookDetails')->middleware('auth');
 
-Route::get('admin', [BooksController::class, 'admin'])->name('admin')->middleware(['auth','role:Super Admin']);
+Route::get('admin', [BooksController::class, 'admin'])->name('admin')->middleware(['auth','role:admin']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
