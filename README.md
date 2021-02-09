@@ -18,6 +18,6 @@
 ## Update
 
 The web app has been deployed to Heroku! This is the <a href="https://booksface.herokuapp.com/">link</a>.
-Also, a test admin account has been added. To login with the test admin account use this credentials:
-    <b>Email:</b> admin@test.com
+Also, a test admin account has been added. To login with the test admin account use this credentials:<br>
+    <b>Email:</b> admin@test.com <br>
     <b>password:</b> 123456789
