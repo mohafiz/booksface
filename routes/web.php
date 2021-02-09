@@ -2,9 +2,9 @@
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Http\Controllers\BooksController;
 
@@ -24,8 +24,9 @@ Route::get('/', [BooksController::class, 'index']);
 
 //add admin
 Route::get('/addadmin', function () {
+    Role::create(['name' => 'admin']);
     $user = User::find(1);
-    $user->assignRole('Super Admin');
+    $user->assignRole('admin');
 });
 
 //API route
