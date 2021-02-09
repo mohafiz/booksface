@@ -10,6 +10,7 @@
 <ul>
     <li><a href="https://jetstream.laravel.com">Jetstream</a></li>
     <li><a href="https://laravel-livewire.com">livewire</a></li>
+    <li><a href="https://laravel.com/docs/8.x/passport">laravel Passport</a></li>
     <li><a href="https://github.com/spatie/laravel-permission">laravel-permission</a></li>
     <li><a href="https://github.com/jeroennoten/Laravel-AdminLTE">laravel-AdminLTE</a></li>
 </ul>

@@ -22,9 +22,10 @@ use App\Http\Controllers\BooksController;
 
 Route::get('/', [BooksController::class, 'index']);
 
-/*Route::get('/apiclients', function() {
+//API route
+Route::get('/apiclients', function() {
     return view('api', ['clients' => Auth::user()->clients, 'tokens' => Auth::user()->tokens]);
-})->middleware('auth')->name('api');*/
+})->middleware('auth')->name('api');
 
 Route::get('list', [BooksController::class, 'booksList'])->name('list')->middleware('auth');
 Route::get('cart', [BooksController::class, 'myCart'])->name('myCart')->middleware('auth');
