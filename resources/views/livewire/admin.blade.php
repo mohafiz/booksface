@@ -99,7 +99,7 @@
               </div>
               <!-- /.card -->
   
-              @if(toDoList->count() > 0)
+              @if($toDoList->count() > 0)
                 <!-- TO DO List -->
                 <div class="card">
                   <div class="card-header ui-sortable-handle">
