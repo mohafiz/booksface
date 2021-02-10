@@ -99,35 +99,37 @@
               </div>
               <!-- /.card -->
   
-              <!-- TO DO List -->
-              <div class="card">
-                <div class="card-header ui-sortable-handle">
-                  <h3 class="card-title">
-                    <i class="ion ion-clipboard mr-1"></i>
-                    To Do List
-                  </h3>
+              @if(toDoList->count() > 0)
+                <!-- TO DO List -->
+                <div class="card">
+                  <div class="card-header ui-sortable-handle">
+                    <h3 class="card-title">
+                      <i class="ion ion-clipboard mr-1"></i>
+                      To Do List
+                    </h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <ul class="todo-list ui-sortable" data-widget="todo-list">
+                      @foreach ($toDoList as $item)
+                        <li class="{{ $item->completed ? 'done' : '' }}">
+                          <!-- checkbox -->
+                          <div class="icheck-primary d-inline ml-2">
+                            <input type="checkbox" wire:model="completed.{{ $item->id }}">
+                          </div>
+                          <!-- todo text -->
+                          <span class="text">{{ $item->name }}</span>
+                          <!-- Emphasis label -->
+                          <small class="badge {{ $item->unit == 'mins' ? 'badge-danger' : 'badge-info' }}"><i class="far fa-clock"></i> {{ $item->period }} {{ $item->unit }}</small>
+                        </li>
+                      @endforeach
+                    </ul>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer clearfix">
+                  </div>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <ul class="todo-list ui-sortable" data-widget="todo-list">
-                    @foreach ($toDoList as $item)
-                      <li class="{{ $item->completed ? 'done' : '' }}">
-                        <!-- checkbox -->
-                        <div class="icheck-primary d-inline ml-2">
-                          <input type="checkbox" wire:model="completed.{{ $item->id }}">
-                        </div>
-                        <!-- todo text -->
-                        <span class="text">{{ $item->name }}</span>
-                        <!-- Emphasis label -->
-                        <small class="badge {{ $item->unit == 'mins' ? 'badge-danger' : 'badge-info' }}"><i class="far fa-clock"></i> {{ $item->period }} {{ $item->unit }}</small>
-                      </li>
-                    @endforeach
-                  </ul>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer clearfix">
-                </div>
-              </div>
+              @endif
               <!-- /.card -->
             </section>
             <!-- /.Left col -->
