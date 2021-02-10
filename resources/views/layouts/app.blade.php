@@ -12,17 +12,17 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/list.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/details.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/passport.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/checkout.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/list.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/details.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/passport.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/checkout.css') }}">
 
         @livewireStyles
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
-        <script src="{{ secure_asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body class="font-sans antialiased passport-authorize">
         <div class="min-h-screen bg-gray-100">
