@@ -52,11 +52,13 @@ class Admin extends Component
         }
 
         $orders = Order::groupBy('month')
-            ->selectRaw('month, count(*) as orders')
-            ->pluck('month', 'orders');
+            ->selectRaw('month, count(*) as orders');
 
-        foreach ($orders as $orders => $month) {
-            $this->ordersChart[$month] = $orders;
+        if ($orders->count() > 0) {
+            $orders = $orders->pluck('month', 'orders');
+            foreach ($orders as $orders => $month) {
+                $this->ordersChart[$month] = $orders;
+            }
         }
 
         $completedStatus = ToDoList::select('id', 'completed')->get();
