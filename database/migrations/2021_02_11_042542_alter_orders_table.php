@@ -13,7 +13,9 @@ class AlterOrdersTable extends Migration
      */
     public function up()
     {
-        DB::statement('ALTER TABLE orders ALTER books TYPE JSON');
+        Schema::table('orders', function(Blueprint $table) {
+            $table->json('books')->change();
+        });
     }
 
     /**
