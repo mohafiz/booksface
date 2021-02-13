@@ -5,7 +5,7 @@
             @if (session()->has('OrderConfirmed'))
                 <div class="alert alert-success">{{ session('OrderConfirmed') }}</div>
             @endif
-            We have <b>{{$booksCount}}</b> books in our database.
+            We have <b>{{$booksCount}}</b> books in our store.
             <br>
             <b>Search for a book:</b> <input class="form-control" type="text" name="searchbooks" wire:model="book" />
         </div>

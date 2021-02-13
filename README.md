@@ -1,6 +1,6 @@
 # BooksFace
 
-<p class="lead">BooksFace is an online book store built using laravel and livewire. It will focus on IT books, maybe in the future we will extend to other categories.</p>
+<p class="lead">BooksFace is an online book store built using laravel and livewire, with a simple admin area. It will focus on IT books, maybe in the future we will extend to other categories.</p>
 <hr class="my-4">
 <p>It uses an API to add books, in order to streamlining the proccess of entering the info.</p>
 <br>
@@ -15,9 +15,20 @@
     <li><a href="https://github.com/jeroennoten/Laravel-AdminLTE">laravel-AdminLTE</a></li>
 </ul>
 
-## Update
+## Updates
 
+<<<<<<< HEAD
 The web app has been deployed to Heroku! This is the <a href="https://booksface.herokuapp.com/">link</a>.<br>
 Also, a test admin account has been added. To login with the test admin account use this credentials:<br>
     <b>Email:</b> admin@test.com
     <b>password:</b> 123456789
+=======
+<ul>
+    <li>
+        The web app has been deployed to Heroku! This is the <a href="https://booksface.herokuapp.com/">link</a>.<br>
+        Also, a test admin account has been added. To login with the test admin account use these credentials:<br>
+            <b>Email:</b> admin@test.com <br>
+            <b>password:</b> 123456789
+    </li>
+</ul>
+>>>>>>> main

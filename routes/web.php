@@ -2,10 +2,11 @@
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\BooksController;
 
 
@@ -33,7 +34,15 @@ Route::get('add', [BooksController::class, 'addBooks'])->name('addBooks')->middl
 Route::get('checkout', [BooksController::class, 'checkout'])->name('checkout')->middleware(['auth', 'referer']);
 Route::get('book/{slug}', [BooksController::class, 'bookDetails'])->name('bookDetails')->middleware('auth');
 
-Route::get('admin', [BooksController::class, 'admin'])->name('admin')->middleware(['auth','role:admin']);
+//admin dashboard routes
+Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/', [adminController::class, 'index'])->name('admin');
+    Route::get('orders', [adminController::class, 'orders'])->name('admin_orders');
+    Route::get('books', [adminController::class, 'books'])->name('admin_books');
+    Route::get('users', [adminController::class, 'users'])->name('admin_users');
+    Route::get('newusers', [adminController::class, 'newusers'])->name('admin_newusers');
+    Route::get('roles', [adminController::class, 'roles'])->name('admin_roles');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -39,9 +39,4 @@ class BooksController extends Controller
     {
         return view('checkout');
     }
-
-    public function admin()
-    {
-        return view('admin.admin');
-    }
 }

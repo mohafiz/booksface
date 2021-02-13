@@ -2,10 +2,11 @@
 
 namespace App\Http\Livewire;
 
+use Auth;
+use Carbon\Carbon;
+use App\Models\Order;
 use Livewire\Component;
 use Illuminate\Http\Request;
-use App\Models\Order;
-use Auth;
 
 class Checkout extends Component
 {
@@ -48,31 +49,31 @@ class Checkout extends Component
             $this->billingAddress = Auth::user()->Address;
         }
         
-        $status = array();
+        $orderInfo = [
+            'user_id'        => $userId,
+            'BillingAddress' => $this->billingAddress,
+            'TotalPrice'     => $this->totalPrice,
+            'month'          => Carbon::now()->format('F'),
+        ];
+
+        $books  = [];
 
         foreach (Auth::user()->books()->get() as $book) {
-            $bookQuantity = Auth::user()->books()->where('book_id', $book->id)->first()->pivot->amount;
+            $quantity = Auth::user()->books()->where('book_id', $book->id)->first()->pivot->amount;
+            $books[$book->title] = $quantity;
 
-            $orderInfo = [
-                'user_id'        => $userId,
-                'title'          => $book->title,
-                'quantity'       => $bookQuantity,
-                'BillingAddress' => $this->billingAddress,
-                'TotalPrice'     => $this->totalPrice
-            ];
-
-            if (Order::create($orderInfo)) {
-                array_push($status, true);
-                Auth::user()->books()->detach($book);
-                $book->update(['stock' => $book->stock-$orderInfo['quantity']]);
-
-                if ($book->stock === 0) {
-                    $book->delete();
-                }
-            }
+            $orderInfo['books'] = $books;
         }
 
-        if (!in_array(false, $status)) {
+        if (Order::create($orderInfo)) {
+
+            Auth::user()->books()->detach();
+            $book->update(['stock' => $book->stock - $books[$book->title]]);
+
+            if ($book->stock === 0) {
+                $book->delete();
+            }
+
             session()->flash('OrderConfirmed', 'Your order has been submitted');
             return redirect(url('/list'));
         }
