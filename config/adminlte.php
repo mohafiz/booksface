@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>B</b>ooks<b>F</>ace',
+    'logo' => '<b>B</b>ooks<b>F</b>ace',
     'logo_img' => 'img/logo-admin.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -230,9 +230,35 @@ return [
             'topnav' => true,
         ],
         [
+            'text' => 'Dashboard',
+            'url'  => 'admin',
+            'can'  => 'see-dashboard',
+        ],
+        [
             'text' => 'Orders',
             'url'  => 'admin/orders',
-            'can'  => 'see-orders',
+            'can'  => 'manage-orders',
+        ],
+        [
+            'text' => 'Books',
+            'url'  => 'admin/books',
+            'can'  => 'manage-books',
+        ],
+        ['header' => 'Manage Users and Roles'],
+        [
+            'text' => 'All Users',
+            'url'  => 'admin/users',
+            'icon' => 'fas fa-user-alt',
+        ],
+        [
+            'text' => 'New Users',
+            'url'  => 'admin/newusers',
+            'icon' => 'fas fa-user',
+        ],
+        [
+            'text' => 'Manage Roles',
+            'url'  => 'admin/roles',
+            'icon' => 'fas fa-user-alt',
         ],
         ['header' => 'account_settings'],
         [

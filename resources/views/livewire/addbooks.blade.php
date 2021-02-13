@@ -16,7 +16,7 @@
                   @if(session()->has('booksAdded'))
                     <div class="alert alert-success">{{ session('booksAdded') }}</div>
                   @else
-                  	<div wire:loading wire:target="addBook">
+                  	<div wire:loading wire:target="addBooks">
 	                  	<div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
                       </div>
@@ -31,7 +31,7 @@
                     <div style="margin-top:10px" class="form-group">
                       <!-- Button -->
                       <div class="col-sm-12 controls">
-                        <input type="submit" class="btn btn-success" value="Add Books" />
+                        <input type="submit" style="width: 100%" class="btn btn-success" value="Add Books" />
                       </div>
                     </div>  
                   </form>     

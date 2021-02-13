@@ -1,6 +1,6 @@
 # BooksFace
 
-<p class="lead">BooksFace is an online book store built using laravel and livewire, with a simple admin dashboard. It will focus on IT books, maybe in the future we will extend to other categories.</p>
+<p class="lead">BooksFace is an online book store built using laravel and livewire, with a simple admin area. It will focus on IT books, maybe in the future we will extend to other categories.</p>
 <hr class="my-4">
 <p>It uses an API to add books, in order to streamlining the proccess of entering the info.</p>
 <br>

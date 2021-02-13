@@ -3,25 +3,19 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\User;
-use App\Models\anime;
+use Spatie\Permission\Contracts\Role;
 
 class UserTest extends TestCase
-{
-    use RefreshDatabase;
-    /**
+{    /**
      * A basic unit test example.
      *
      * @return void
      */
-    public function test_user_has_many_animes()
+    public function test_user_has_role()
     {
-        $user   = User::factory()->create();
-        $anime  = anime::factory()->create();
+        $user = User::factory()->create();
 
-        $user->animes()->attach($anime);
-
-        $this->assertTrue($user->animes->contains($anime));
+        $this->assertTrue($user->hasRole('user'));
     }
 }
