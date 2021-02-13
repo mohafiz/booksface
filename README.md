@@ -25,8 +25,3 @@
             <b>password:</b> 123456789
     </li>
 </ul>
-
-## Future work
-<ul>
-    <li>For now, the charts in the dashboard is static, we can use an analytic tool instead.
-</ul>
