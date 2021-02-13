@@ -42,11 +42,13 @@ class Admin extends Component
     public function mount()
     {
         $sales = Sales::groupBy('Month')
-            ->selectRaw('Month, sum(sales) as sales')
-            ->pluck('Month', 'sales');
+            ->selectRaw('Month, sum(sales) as sales');
 
-        foreach ($sales as $sales => $month) {
-            $this->salesChart[$month] = $sales;
+        if ($sales->count() > 0) {
+            $sales = $sales->pluck('Month', 'sales');
+            foreach ($sales as $sales => $month) {
+                $this->salesChart[$month] = $sales;
+            }
         }
 
         $orders = Order::groupBy('month')
