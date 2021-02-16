@@ -24,13 +24,17 @@ Route::middleware('auth:api')->group(function () {
         return response(['user' => Auth::user()]);
     });
 
+    Route::get('list', function () {
+        return response(['books' => Book::all()]);
+    })->middleware('scope:show-list');
+
     Route::get('books/{id}', function ($id) {
         return response(['book' => Book::find($id)]);
     })->middleware('scope:show-book');
 
-    Route::get('list', function () {
+    Route::get('cart', function () {
         return response(['books' => Auth::user()->books]);
-    })->middleware('scope:show-list');
+    })->middleware('scope:show-cart');
 
     Route::get('/user', function () {
         return response(['user' => Auth::user()]);
