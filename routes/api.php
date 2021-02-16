@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->group(function () {
     Route::get('/login', function () {
         if (!Auth::check()) {
-            Auth::attempt(['email' => 'mohhafiz001@gmail.com', 'password' => 'salihmohamedahmed']);
+            Auth::attempt(['email' => 'admin@test.com', 'password' => '123456789']);
         }
     
         return response(['user' => Auth::user()]);

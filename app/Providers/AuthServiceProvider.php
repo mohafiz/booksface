@@ -30,6 +30,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::tokensCan([
             'show-book'     => 'Show book information',
+            'show-list'     => 'Show books list',
             'show-cart'     => 'Show your books cart',
             'access-profile'=> 'Access your profile information'
         ]);
