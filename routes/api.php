@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\anime;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,12 +24,12 @@ Route::middleware('auth:api')->group(function () {
         return response(['user' => Auth::user()]);
     });
 
-    Route::get('anime/{id}', function ($id) {
-        return response(['anime' => anime::find($id)]);
-    })->middleware('scope:show-anime');
+    Route::get('books/{id}', function ($id) {
+        return response(['book' => Book::find($id)]);
+    })->middleware('scope:show-book');
 
     Route::get('list', function () {
-        return response(['animes' => Auth::user()->animes]);
+        return response(['books' => Auth::user()->books]);
     })->middleware('scope:show-list');
 
     Route::get('/user', function () {
