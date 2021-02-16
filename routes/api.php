@@ -47,11 +47,3 @@ Route::middleware('auth:api')->group(function () {
     });
 
 });
-
-/*Route::middleware('auth:api')->get('/anime/{id}', function($id) {
-    return response(['anime' => anime::find($id)]);
-});
-
-/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});*/

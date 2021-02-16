@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Broadcast;
-use \App\Models\anime;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +15,4 @@ use \App\Models\anime;
 
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
-});
-
-Broadcast::channel('anime.{animeId}', function($user, $animeId){
-	return anime::find($animeId) != null;
 });
